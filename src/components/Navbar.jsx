@@ -1,7 +1,7 @@
 function Navbar(props) {
   const handleOnClick = (e) => {
     e.preventDefault();
-    props.logout();
+    props.logout(props.getToken());
   };
   return (
     <div>

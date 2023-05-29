@@ -30,7 +30,13 @@ function App() {
     return userToken;
   };
 
-  const logout = () => {
+  const logout = async () => {
+    const headers = { Authorization: "Bearer " + token };
+    const response = await fetch(`http://localhost:8000/api/angkot/logout`, {
+      method: "POST",
+      headers,
+    });
+    const data = await response.json();
     setToken("");
     localStorage.setItem("token", "");
   };
@@ -43,7 +49,7 @@ function App() {
     <div className="relative min-h-screen bg-white border-gray-200 dark:bg-gray-900">
       <Navbar logout={logout} getToken={getToken} />
       <div>
-        {getToken() == "" ? (
+        {getToken() == "" || getToken() == null ? (
           <LoginForm login={login} error={error} />
         ) : (
           <Search getToken={getToken} />
