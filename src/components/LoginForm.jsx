@@ -36,11 +36,11 @@ function LoginForm(props) {
               action="#"
               onSubmit={submitHandler}
             >
-              {props.error != "" ? (
+              {/* {props.error != "" ? (
                 <div className="error">{props.error}</div>
               ) : (
                 ""
-              )}
+              )} */}
               <div>
                 <label
                   htmlFor="email"

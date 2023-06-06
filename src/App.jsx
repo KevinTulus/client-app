@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState("");
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   const login = async (details) => {
     const response = await fetch(`http://localhost:8000/api/angkot/login`, {
@@ -50,7 +50,7 @@ function App() {
       <Navbar logout={logout} getToken={getToken} />
       <div>
         {getToken() == "" || getToken() == null ? (
-          <LoginForm login={login} error={error} />
+          <LoginForm login={login} />
         ) : (
           <Search getToken={getToken} />
         )}

@@ -1,5 +1,3 @@
-import React from "react";
-
 function SearchTwo(props) {
   return (
     <div className="flex gap-4">
